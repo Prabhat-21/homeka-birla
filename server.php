@@ -1,16 +1,9 @@
 <?php
 
-file_put_contents('debug.log', date('Y-m-d H:i:s') . " - Form accessed\n", FILE_APPEND);
-file_put_contents('debug.log', print_r($_POST, true) . "\n", FILE_APPEND);
-file_put_contents('debug.log', "---\n", FILE_APPEND);
-
 header('Content-Type: application/json');
 
-// Google Apps Script Web App URL
-$GOOGLE_SCRIPT_URL = "https://script.google.com/a/macros/homeka.in/s/AKfycbyx4ecY_LfnlxxlIJ3ezN7BKDIKkoxh6xxzx6hWsq37SeMWqdFpCHlNjmRN3MBwfdWqhw/exec"; // ← REPLACE THIS!
-
 // Project Name
-$projectName = "Birla Estates Kalwa";
+$projectName = "Test Project";
 
 if (isset($_POST) && isset($_POST['input_phone_no']) && trim($_POST['input_phone_no']) != '') {
 
@@ -19,6 +12,7 @@ if (isset($_POST) && isset($_POST['input_phone_no']) && trim($_POST['input_phone
     $leadData['mobile'] = filter_var($_POST['input_phone_no'] ?? '', FILTER_SANITIZE_STRING);
     $leadData['email'] = filter_var($_POST['input_email'] ?? '', FILTER_SANITIZE_EMAIL);
     $leadData['form'] = ucwords(strtolower(filter_var($_POST['onclick'] ?? '', FILTER_SANITIZE_STRING)));
+    $leadData['comment'] = "";
     $leadData['project'] = $projectName;
 
     date_default_timezone_set('Asia/Kolkata');
@@ -32,28 +26,23 @@ if (isset($_POST) && isset($_POST['input_phone_no']) && trim($_POST['input_phone
     $leadData['date'] = date("d-m-Y");
     $leadData['time'] = date("h:i A");
 
-    // Send data to Google Sheets
-    $ch = curl_init($GOOGLE_SCRIPT_URL);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-    curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($leadData));
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-    
-    $response = curl_exec($ch);
-    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-    curl_close($ch);
+    // echo "<pre>";
+    // echo json_encode($leadData);
+    // echo "</pre>";
+    // exit;
 
-    // Redirect to thank you page regardless of Google Sheets response
+    $leadData = array();
+    echo json_encode(['status' => 'success', 'message' => 'Data submitted successfully.']);
     header("Location: ./thank-you/");
     exit;
 
+
 } else {
     echo json_encode(['status' => 'error', 'message' => 'Required fields are missing.']);
+    // header("Location: /");
     exit;
 }
 
 echo json_encode(['status' => 'error', 'message' => 'Direct access not allowed.']);
+// header("Location: /");
 exit;
-
-
