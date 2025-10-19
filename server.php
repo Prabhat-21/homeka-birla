@@ -3,7 +3,7 @@
 header('Content-Type: application/json');
 
 // Google Apps Script Web App URL
-$GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyx4ecY_LfnlxxlIJ3ezN7BKDIKkoxh6xxzx6hWsq37SeMWqdFpCHlNjmRN3MBwfdWqhw/exec"; // ← REPLACE THIS!
+$GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyT0aNEkOg296BMHorMiJbhtAPqn6S9dmuPVDfMTrUuk6kSH71qlhz3FE-1myEIEYcQ1A/exec"; // ← REPLACE THIS!
 
 // Project Name
 $projectName = "Birla Estates Kalwa";
@@ -51,4 +51,5 @@ if (isset($_POST) && isset($_POST['input_phone_no']) && trim($_POST['input_phone
 
 echo json_encode(['status' => 'error', 'message' => 'Direct access not allowed.']);
 exit;
+
 
