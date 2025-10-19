@@ -1,5 +1,9 @@
 <?php
 
+file_put_contents('debug.log', date('Y-m-d H:i:s') . " - Form accessed\n", FILE_APPEND);
+file_put_contents('debug.log', print_r($_POST, true) . "\n", FILE_APPEND);
+file_put_contents('debug.log', "---\n", FILE_APPEND);
+
 header('Content-Type: application/json');
 
 // Google Apps Script Web App URL
@@ -51,4 +55,5 @@ if (isset($_POST) && isset($_POST['input_phone_no']) && trim($_POST['input_phone
 
 echo json_encode(['status' => 'error', 'message' => 'Direct access not allowed.']);
 exit;
+
 
