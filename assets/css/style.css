@@ -229,7 +229,7 @@ nav ul li {
 
   @keyframes shrinkBanner {
     to {
-      height: 720px;
+      height: 800px;
     }
   }
 }
