@@ -331,11 +331,16 @@ nav ul li {
 
 .left_body_usp {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
   border-bottom: 1px dashed var(--primary-color);
   padding-block: 0 0.5rem;
   margin-bottom: 0.5rem;
+}
+
+.left_body_usp svg {
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .left_body_usp:last-child {
