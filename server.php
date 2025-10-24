@@ -8,7 +8,7 @@ ini_set('display_errors', 0);
 ini_set('log_errors', 1);
 
 // Google Apps Script Web App URL
-$GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyT0aNEkOg296BMHorMiJbhtAPqn6S9dmuPVDfMTrUuk6kSH71qlhz3FE-1myEIEYcQ1A/exec";
+$GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx9wUf9oNI7RELNlb1BvloFUuFOqM6cSRb8Jbx2H0Zw45TcNNsY7MocmdvcVjNdTEpPcQ/exec";
 
 // Project Name
 $projectName = "Birla Estates Kalwa";
@@ -90,4 +90,5 @@ ob_end_clean();
 header("Location: ./thank-you/");
 exit;
 ?>
+
 
