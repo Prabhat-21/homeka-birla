@@ -220,6 +220,18 @@ nav ul li {
   }
 }
 
+@media screen and (min-width: 776px) {
+  .bg_image img {
+    object-position: 55% center;
+  }
+
+  @keyframes shrinkBanner {
+    to {
+      height: 650px;
+    }
+  }
+}
+
 @keyframes shrinkBanner {
   to {
     height: 494px;
