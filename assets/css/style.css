@@ -222,12 +222,13 @@ nav ul li {
 
 @media screen and (min-width: 776px) {
   .bg_image img {
-    object-position: 55% center;
+    object-position: center top;
+    object-fit: cover;
   }
 
   @keyframes shrinkBanner {
     to {
-      height: 650px;
+      height: 720px;
     }
   }
 }
