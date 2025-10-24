@@ -309,7 +309,7 @@ nav ul li {
 .possession_date,
 .units {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   gap: 4px;
   font-weight: 500;
   line-height: 19.84px;
