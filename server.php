@@ -1,6 +1,6 @@
 <?php
 // UPDATE THIS LINE WITH YOUR GOOGLE SCRIPT URL
-$url = "https://script.google.com/macros/s/AKfycbyT0aNEkOg296BMHorMiJbhtAPqn6S9dmuPVDfMTrUuk6kSH71qlhz3FE-1myEIEYcQ1A/exec";
+$url = "https://script.google.com/macros/s/AKfycbx9wUf9oNI7RELNlb1BvloFUuFOqM6cSRb8Jbx2H0Zw45TcNNsY7MocmdvcVjNdTEpPcQ/exec";
 
 // Get form data
 $data = json_encode(array(
@@ -43,3 +43,4 @@ if (function_exists('curl_init')) {
     </script>
 </body>
 </html>
+
