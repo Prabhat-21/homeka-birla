@@ -61,30 +61,30 @@ function openfeat(feat, features, sectionId, button = "tab_button") {
 document.querySelector(".tab_head .tab_button:first-child").click();
 document.querySelector(".tab_head .gallery_tab_button:first-child").click();
 
-// slide
+// Banner Carousel with auto-slide
 document.addEventListener("DOMContentLoaded", () => {
-  // Set the first slide and radio button as active initially
-  const slides = document.querySelectorAll(".slide");
-  const radioButtons = document.querySelectorAll(".radio-button");
+  const bannerSlides = document.querySelectorAll(".banner-carousel .slide");
+  const bannerRadioButtons = document.querySelectorAll(".banner-carousel .radio-button");
 
-  if (slides.length > 0) {
-    slides[0].classList.add("active");
+  if (bannerSlides.length > 0) {
+    bannerSlides[0].classList.add("active");
   }
-  if (radioButtons.length > 0) {
-    radioButtons[0].classList.add("active");
-  }
-
-  let currentIndex = 0;
-
-  function goToSlide(index) {
-    currentIndex = index;
-    updateSlides();
-    updateRadioButtons();
+  if (bannerRadioButtons.length > 0) {
+    bannerRadioButtons[0].classList.add("active");
   }
 
-  function updateSlides() {
-    slides.forEach((slide, index) => {
-      if (index === currentIndex) {
+  let currentBannerIndex = 0;
+
+  // Make goToSlide function global for onclick handlers
+  window.goToSlide = function(index) {
+    currentBannerIndex = index;
+    updateBannerSlides();
+    updateBannerRadioButtons();
+  }
+
+  function updateBannerSlides() {
+    bannerSlides.forEach((slide, index) => {
+      if (index === currentBannerIndex) {
         slide.classList.add("active");
       } else {
         slide.classList.remove("active");
@@ -92,9 +92,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function updateRadioButtons() {
-    radioButtons.forEach((button, index) => {
-      if (index === currentIndex) {
+  function updateBannerRadioButtons() {
+    bannerRadioButtons.forEach((button, index) => {
+      if (index === currentBannerIndex) {
         button.classList.add("active");
       } else {
         button.classList.remove("active");
@@ -102,13 +102,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function moveToNext() {
-    currentIndex = (currentIndex + 1) % slides.length;
-    updateSlides();
-    updateRadioButtons();
+  function moveToNextBanner() {
+    currentBannerIndex = (currentBannerIndex + 1) % bannerSlides.length;
+    updateBannerSlides();
+    updateBannerRadioButtons();
   }
 
-  setInterval(moveToNext, 3000);
+  // Auto-slide every 5 seconds
+  setInterval(moveToNextBanner, 5000);
 });
 
 /* onclick Menu list scroll to respective section */
