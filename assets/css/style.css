@@ -1749,3 +1749,88 @@ input[type="checkbox"] {
 body.no-scroll {
   overflow: hidden;
 }
+
+/* Banner Carousel Styles - Add these to your style.css file */
+
+/* Banner carousel container */
+.banner-carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Individual slides */
+.banner-carousel .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  z-index: 1;
+}
+
+.banner-carousel .slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.banner-carousel .slide picture,
+.banner-carousel .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Carousel indicators (radio buttons) */
+.carousel-indicators {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+
+.carousel-indicators .radio-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicators .radio-button:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+  transform: scale(1.1);
+}
+
+.carousel-indicators .radio-button.active {
+  background-color: rgba(255, 255, 255, 1);
+  border-color: rgba(255, 255, 255, 1);
+  width: 14px;
+  height: 14px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .carousel-indicators {
+    bottom: 20px;
+    gap: 10px;
+  }
+  
+  .carousel-indicators .radio-button {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .carousel-indicators .radio-button.active {
+    width: 12px;
+    height: 12px;
+  }
+}
