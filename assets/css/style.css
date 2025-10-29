@@ -246,11 +246,16 @@ nav ul li {
   width: 90%;
   margin-inline: auto;
   display: flex;
-  align-items: flex-start; /* Change to 'center' or 'flex-end' if needed */
+  align-items: center; /* This will vertically center both cards */
   justify-content: space-between;
-  margin-top: -500px; /* Adjust this value to position cards vertically */
+  margin-top: -500px;
 }
 
+/* Ensure both cards have the same vertical alignment */
+.hero_left,
+.hero_right {
+  align-self: flex-start; /* or 'center' for middle alignment */
+}
 /* left form section */
 
 .hero_left {
@@ -1750,6 +1755,7 @@ input[type="checkbox"] {
 body.no-scroll {
   overflow: hidden;
 }
+
 
 
 
