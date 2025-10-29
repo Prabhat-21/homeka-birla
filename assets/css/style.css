@@ -222,10 +222,11 @@ nav ul li {
 
 @media screen and (min-width: 776px) {
   .bg_image img {
-    object-position: 60% 35%;
+    object-position: center center;
     object-fit: cover;
-    transform: scale(1.15);
+    transform: scale(1);
   }
+}
 
   @keyframes shrinkBanner {
     to {
@@ -1749,3 +1750,4 @@ input[type="checkbox"] {
 body.no-scroll {
   overflow: hidden;
 }
+
