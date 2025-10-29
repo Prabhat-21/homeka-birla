@@ -248,7 +248,7 @@ nav ul li {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-top: -440px;
+  margin-top: -500px;
 }
 
 /* left form section */
@@ -1750,4 +1750,5 @@ input[type="checkbox"] {
 body.no-scroll {
   overflow: hidden;
 }
+
 
