@@ -241,22 +241,34 @@ nav ul li {
   }
 }
 
-/* Hero section - align both cards horizontally */
+/* Hero section - ensure both cards align at same height */
 .main_hero_section {
   width: 90%;
+  max-width: 1400px;
   margin-inline: auto;
   display: flex;
-  align-items: flex-start; /* Align both cards at the top */
+  align-items: flex-start; /* This aligns both at the top */
   justify-content: space-between;
-  margin-top: -450px; /* Adjust to overlay cards on banner */
-  gap: 20px; /* Add spacing between cards */
+  margin-top: -400px;
+  margin-bottom: 4rem;
+  gap: 30px;
+  position: relative;
+  z-index: 10;
 }
 
-/* Left card - remove fixed positioning */
+/* Remove any individual margin/padding differences */
+.hero_left,
+.hero_right {
+  flex: 0 0 auto;
+  width: 28%;
+  max-width: 380px;
+  margin-top: 0; /* Ensure no top margin */
+  padding-top: 0; /* Ensure no top padding */
+  align-self: flex-start; /* Both align to the start of flex container */
+}
+
 .hero_left {
-  position: relative; /* Changed from relative */
-  width: 24%;
-  max-width: 340px;
+  position: relative;
   background-color: #ffffff;
   border-radius: 12px;
   background: linear-gradient(180deg, #fafafa 0%, #f2f2f2 100%);
@@ -268,11 +280,8 @@ nav ul li {
   overflow: hidden;
 }
 
-/* Right card - remove fixed positioning */
 .hero_right {
-  position: relative; /* Changed from fixed */
-  width: 24%;
-  max-width: 340px;
+  position: relative;
   overflow: hidden;
   background-color: #ffffff;
   border-radius: 12px;
@@ -281,18 +290,7 @@ nav ul li {
   transition: opacity 0.75s ease;
   animation: showContent 0.75s forwards;
   animation-delay: 1.25s;
-  /* Remove these fixed positioning properties */
-  /* top: 7rem; */
-  /* left: 74%; */
 }
-
-/* Remove individual card alignment overrides */
-.hero_left,
-.hero_right {
-  /* Remove or comment out this if it exists */
-  /* align-self: flex-start; */
-}
-
 
 @media screen and (min-width: 776px) {
   .hero_left {
@@ -1775,6 +1773,7 @@ input[type="checkbox"] {
 body.no-scroll {
   overflow: hidden;
 }
+
 
 
 
