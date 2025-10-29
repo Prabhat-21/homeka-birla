@@ -222,7 +222,7 @@ nav ul li {
 
 @media screen and (min-width: 776px) {
   .bg_image img {
-    object-position: center center;
+    object-position: 70% center; /* Move buildings to the right */
     object-fit: cover;
     transform: scale(1);
   }
@@ -246,9 +246,9 @@ nav ul li {
   width: 90%;
   margin-inline: auto;
   display: flex;
-  align-items: flex-start;
+  align-items: flex-start; /* Change to 'center' or 'flex-end' if needed */
   justify-content: space-between;
-  margin-top: -500px;
+  margin-top: -500px; /* Adjust this value to position cards vertically */
 }
 
 /* left form section */
@@ -1750,5 +1750,6 @@ input[type="checkbox"] {
 body.no-scroll {
   overflow: hidden;
 }
+
 
 
