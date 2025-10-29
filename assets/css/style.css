@@ -241,13 +241,13 @@ nav ul li {
   }
 }
 
-/* Hero section - ensure both cards align at same height */
+/* Hero section - both cards aligned at same starting position */
 .main_hero_section {
   width: 90%;
   max-width: 1400px;
   margin-inline: auto;
   display: flex;
-  align-items: flex-start; /* This aligns both at the top */
+  align-items: flex-start;
   justify-content: space-between;
   margin-top: -400px;
   margin-bottom: 4rem;
@@ -256,19 +256,11 @@ nav ul li {
   z-index: 10;
 }
 
-/* Remove any individual margin/padding differences */
-.hero_left,
-.hero_right {
-  flex: 0 0 auto;
+/* Left card - scrolls with page, not fixed */
+.hero_left {
+  position: relative; /* Scrolls normally */
   width: 28%;
   max-width: 380px;
-  margin-top: 0; /* Ensure no top margin */
-  padding-top: 0; /* Ensure no top padding */
-  align-self: flex-start; /* Both align to the start of flex container */
-}
-
-.hero_left {
-  position: relative;
   background-color: #ffffff;
   border-radius: 12px;
   background: linear-gradient(180deg, #fafafa 0%, #f2f2f2 100%);
@@ -278,10 +270,16 @@ nav ul li {
   animation: showContent 0.75s forwards;
   animation-delay: 0.75s;
   overflow: hidden;
+  margin-top: 0; /* Ensure starts at same position */
 }
 
+/* Right card - stays fixed on scroll */
 .hero_right {
-  position: relative;
+  position: fixed; /* Stays fixed */
+  top: 7rem; /* Same as left card's visual position */
+  right: 5%; /* Position from right edge */
+  width: 28%;
+  max-width: 380px;
   overflow: hidden;
   background-color: #ffffff;
   border-radius: 12px;
@@ -292,23 +290,14 @@ nav ul li {
   animation-delay: 1.25s;
 }
 
+/* Adjust for responsive */
 @media screen and (min-width: 776px) {
   .hero_left {
     max-width: 340px;
   }
-
-  .hero_left_body {
-    padding: 14px 18px;
-  }
-
-  .hero_left_body_usps {
-    padding: 10px 14px;
-    margin-block: 0.8rem;
-  }
-
-  .main_sec_button {
-    padding: 10px 16px;
-    font-size: 15px;
+  
+  .hero_right {
+    max-width: 340px;
   }
 }
 
@@ -1773,6 +1762,7 @@ input[type="checkbox"] {
 body.no-scroll {
   overflow: hidden;
 }
+
 
 
 
