@@ -223,25 +223,26 @@ nav ul li {
 
 
 /* Background image - center the buildings/skyline */
+/* Background image adjustments */
 @media screen and (min-width: 776px) {
   .bg_image {
     height: 100vh;
   }
   
   .bg_image img {
-    object-position: center center; /* Center the skyline */
+    object-position: center center;
     object-fit: cover;
     transform: scale(1);
   }
   
   @keyframes shrinkBanner {
     to {
-      height: 600px; /* Adjust this height as needed */
+      height: 700px; /* Increase banner height */
     }
   }
 }
 
-/* Hero section - both cards aligned at same starting position */
+/* Hero section - position cards to overlay banner */
 .main_hero_section {
   width: 90%;
   max-width: 1400px;
@@ -249,16 +250,16 @@ nav ul li {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-top: -400px;
+  margin-top: -550px; /* Increase negative margin to move cards up more */
   margin-bottom: 4rem;
   gap: 30px;
   position: relative;
   z-index: 10;
 }
 
-/* Left card - scrolls with page, not fixed */
+/* Left card - completely on banner image */
 .hero_left {
-  position: relative; /* Scrolls normally */
+  position: relative;
   width: 28%;
   max-width: 380px;
   background-color: #ffffff;
@@ -270,14 +271,14 @@ nav ul li {
   animation: showContent 0.75s forwards;
   animation-delay: 0.75s;
   overflow: hidden;
-  margin-top: 0; /* Ensure starts at same position */
+  margin-top: 0;
 }
 
-/* Right card - stays fixed on scroll */
+/* Right card - stays fixed at same visual position */
 .hero_right {
-  position: fixed; /* Stays fixed */
-  top: 7rem; /* Same as left card's visual position */
-  right: 5%; /* Position from right edge */
+  position: fixed;
+  top: 150px; /* Adjust to align with left card visually */
+  right: 5%;
   width: 28%;
   max-width: 380px;
   overflow: hidden;
@@ -289,7 +290,6 @@ nav ul li {
   animation: showContent 0.75s forwards;
   animation-delay: 1.25s;
 }
-
 /* Adjust for responsive */
 @media screen and (min-width: 776px) {
   .hero_left {
@@ -1762,6 +1762,7 @@ input[type="checkbox"] {
 body.no-scroll {
   overflow: hidden;
 }
+
 
 
 
