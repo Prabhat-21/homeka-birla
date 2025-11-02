@@ -400,6 +400,7 @@ function initializeFormValidation(phoneFields, submitButtonId) {
   });
 
   form.addEventListener("submit", function (event) {
+    event.preventDefault();
     let isFormValid = true;
 
     for (const field of phoneFields) {
@@ -430,8 +431,20 @@ function initializeFormValidation(phoneFields, submitButtonId) {
       }
     }
 
-    if (!isFormValid) {
-      event.preventDefault();
+    if (isFormValid) {
+      const formData = new FormData(form);
+
+      fetch('/api/submit-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(Object.fromEntries(formData))
+      }).catch(error => {
+        console.error('Error:', error);
+      });
+
+      window.location.href = '/thank-you/';
     }
   });
 }
