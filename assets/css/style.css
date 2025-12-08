@@ -291,16 +291,14 @@ nav ul li {
   color: #666666;
   margin-bottom: 12px;
 }
+
 .unit_n_date {
   padding-top: 1rem;
   border-top: 1px solid #e2e6e7;
-  flex-wrap: wrap;
-}
-
-.unit_n_date {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+  gap: 8px;
 }
 
 .units,
@@ -310,6 +308,14 @@ nav ul li {
   gap: 4px;
   font-weight: 500;
   line-height: 19.84px;
+  font-size: 14px;
+  color: #666666;
+}
+
+.possession_date svg,
+.units svg {
+  width: 15px;
+  flex-shrink: 0;
 }
 
 .total_acres,
@@ -319,20 +325,6 @@ nav ul li {
   font-weight: 700;
   font-size: 16px;
   line-height: 22.32px;
-}
-
-.possession_date,
-.units {
-  display: flex;
-  align-items: flex-end;
-  gap: 4px;
-  font-weight: 500;
-  line-height: 19.84px;
-}
-
-.possession_date svg,
-.units svg {
-  width: 15px;
 }
 
 .hero_left_body_usps {
@@ -1725,4 +1717,5 @@ input[type="checkbox"] {
 body.no-scroll {
   overflow: hidden;
 }
+
 
