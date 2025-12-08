@@ -479,9 +479,9 @@ nav ul li {
 
 .bhks {
   color: #666666;
-  font-size: 16px;
+  font-size: 18px;  /* Changed from 16px to 18px */
   font-weight: 600;
-  line-height: 22.78px;
+  line-height: 24px;  /* Adjusted line-height proportionally */
   text-align: left;
 }
 
@@ -1717,5 +1717,6 @@ input[type="checkbox"] {
 body.no-scroll {
   overflow: hidden;
 }
+
 
 
