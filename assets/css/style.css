@@ -297,6 +297,21 @@ nav ul li {
   flex-wrap: wrap;
 }
 
+.unit_n_date {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.units,
+.possession_date {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 500;
+  line-height: 19.84px;
+}
+
 .total_acres,
 .possession_date span,
 .units span {
@@ -1710,3 +1725,4 @@ input[type="checkbox"] {
 body.no-scroll {
   overflow: hidden;
 }
+
