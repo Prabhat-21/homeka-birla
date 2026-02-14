@@ -372,7 +372,7 @@ nav ul li {
   position: relative;
 }
 .hero_left h2::after {
-  content: "Birla Estates Kalwa";
+  content: "Godrej Varanya Kharghar";
   position: absolute;
   top: 0;
   left: 0;
@@ -446,7 +446,7 @@ nav ul li {
 }
 
 .price::after {
-  content: "â‚¹ 80 Lacs* Onwards";
+  content: "₹ 2.25 Cr* Onwards";
   position: absolute;
   top: 0;
   left: 0;
